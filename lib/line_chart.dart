@@ -10,11 +10,7 @@ class LineChartSample extends StatefulWidget {
 }
 
 class _LineChartSampleState extends State<LineChartSample> {
-
-  List<Color> gradientColors = [
-    const Color(0xff23b6e6),
-    const Color(0xff02d39a),
-  ];
+  List<Color> gradientColors = [const Color(0xff23b6e6), const Color(0xff02d39a)];
 
   bool showAvg = false;
 
@@ -22,6 +18,7 @@ class _LineChartSampleState extends State<LineChartSample> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawerScrimColor: Colors.transparent,
+      backgroundColor: Colors.blue,
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.white,
@@ -31,16 +28,15 @@ class _LineChartSampleState extends State<LineChartSample> {
         title: const FittedBox(
           child: Text(
             "Line Chart",
-            style:TextStyle(
+            style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w500,
-              letterSpacing:1.3,
+              letterSpacing: 1.3,
             ),
           ),
         ),
         backgroundColor: Colors.white,
       ),
-      backgroundColor: Colors.white,
       body: Stack(
         children: <Widget>[
           AspectRatio(
@@ -73,7 +69,7 @@ class _LineChartSampleState extends State<LineChartSample> {
                 'avg',
                 style: TextStyle(
                   fontSize: 12,
-                  color: showAvg ? Colors.white.withOpacity(0.5) : Colors.white,
+                  color: showAvg ? Colors.red.withOpacity(0.5) : Colors.blue,
                 ),
               ),
             ),
@@ -144,7 +140,6 @@ class _LineChartSampleState extends State<LineChartSample> {
             FlSpot(4, 4),
             FlSpot(6, 2),
             FlSpot(8, 4),
-            FlSpot(9, 3),
             FlSpot(10, 5),
             FlSpot(12, 4),
           ],
@@ -179,10 +174,10 @@ class _LineChartSampleState extends State<LineChartSample> {
       case 2:
         text = const Text('MAR', style: style);
         break;
-      case 5:
+      case 4:
         text = const Text('JUN', style: style);
         break;
-      case 8:
+      case 6:
         text = const Text('SEP', style: style);
         break;
       default:
@@ -288,10 +283,8 @@ class _LineChartSampleState extends State<LineChartSample> {
           isCurved: true,
           gradient: LinearGradient(
             colors: [
-              ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                  .lerp(0.2)!,
-              ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                  .lerp(0.2)!,
+              ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2)!,
+              ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2)!,
             ],
           ),
           barWidth: 5,
@@ -303,12 +296,8 @@ class _LineChartSampleState extends State<LineChartSample> {
             show: true,
             gradient: LinearGradient(
               colors: [
-                ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                    .lerp(0.2)!
-                    .withOpacity(0.1),
-                ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                    .lerp(0.2)!
-                    .withOpacity(0.1),
+                ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2)!.withOpacity(0.1),
+                ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2)!.withOpacity(0.1),
               ],
             ),
           ),

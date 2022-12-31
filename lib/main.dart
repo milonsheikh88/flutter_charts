@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: const LineChartSample(),
+       home: const LineChartSample(),
       // home: const PieChartSample(),
-      home: const BarChartSample(),
+    //  home: const BarChartSample(),
     );
   }
 }
